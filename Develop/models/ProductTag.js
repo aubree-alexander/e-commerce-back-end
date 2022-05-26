@@ -1,11 +1,9 @@
 const { Model, DataTypes } = require('sequelize');
 
 const sequelize = require('../config/connection');
-//this is a through/junction table. ties product and tag tables together. when we use this is when 2 different models have a many to many relationship. 
-//think of hashtags. hashtags can have many images/products they're tied to and products can have a bunch of hashtags.
-//this table maps relationships to tables that have many to many.
 class ProductTag extends Model {}
 
+//through/junction table - ties product and tag tables together.
 ProductTag.init(
   {
     id: {

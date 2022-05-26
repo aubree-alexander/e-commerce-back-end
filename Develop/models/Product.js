@@ -34,7 +34,6 @@ Product.init(
         type: DataTypes.INTEGER,
         //refernces category table and grabs the key
         references: {model: 'category', key: 'id'}
-        //trying to create foreignkey taht references category table. 
     }, 
   },
   {

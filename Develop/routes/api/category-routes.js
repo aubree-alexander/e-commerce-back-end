@@ -19,7 +19,6 @@ router.get('/:id', (req, res) => {
 
 //create new category
 router.post('/', (req, res) => {
-  //req.body stands for all the columns of this specific table
   Category.create(req.body)
   .then(categoryResponse => res.status(200).json(categoryResponse))
   .catch(err => res.status(400).json(err)) 
@@ -34,7 +33,6 @@ router.put('/:id', (req, res) => {
 
 //delete category by id value
 router.delete('/:id', (req, res) => {
-  //don't need req.body here! destroy knows to take req.body without us explicitly saying so
   Category.destroy({where: {id: req.params.id}})
   .then(categoryResponse => res.status(200).json(categoryResponse))
   .catch(err => res.status(400).json(err)) 

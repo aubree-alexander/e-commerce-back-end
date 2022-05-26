@@ -22,7 +22,6 @@ Category.init(
     timestamps: false,
     freezeTableName: true,
     underscored: true,
-    //this is what we use to reference this table on other tables! called modelname here but called model where it's being referenced
     modelName: 'category',
   }
 );
