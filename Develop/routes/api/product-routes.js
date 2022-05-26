@@ -49,7 +49,7 @@ router.post('/', (req, res) => {
     });
 });
 
-//AA - UPDATE THIS! not working
+
 // update product
 router.put('/:id', (req, res) => {
   // update product data
@@ -92,7 +92,7 @@ router.put('/:id', (req, res) => {
     });
 });
 
-//AA - COME BACK TO THIS - NOT WORKING
+
 //delete product by its id
 router.delete('/:id', (req, res) => {
   Product.destroy({where: {id: req.params.id}})
