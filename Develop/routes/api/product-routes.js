@@ -3,17 +3,18 @@ const { Product, Category, Tag, ProductTag } = require('../../models');
 
 // The `/api/products` endpoint
 
-// get all products
+// get/find all products and its associated category and tag data
 router.get('/', (req, res) => {
-  // find all products
-  // be sure to include its associated Category and Tag data
   Product.findAll({include: [Category, {model: Tag, through: ProductTag}]})
+  .then(categoryResponse => res.status(200).json(categoryResponse))
+  .catch(err => res.status(400).json(err)) 
 });
 
-// get one product
+// get one product by its id and its associated category and tag data
 router.get('/:id', (req, res) => {
-  // find a single product by its `id`
-  // be sure to include its associated Category and Tag data
+  Product.findOne({include: [Category, {model: Tag, through: ProductTag}], where: {id: req.params.id}})
+  .then(categoryResponse => res.status(200).json(categoryResponse))
+  .catch(err => res.status(400).json(err)) 
 });
 
 // create new product
@@ -48,6 +49,7 @@ router.post('/', (req, res) => {
     });
 });
 
+//AA - UPDATE THIS! not working
 // update product
 router.put('/:id', (req, res) => {
   // update product data
@@ -90,8 +92,12 @@ router.put('/:id', (req, res) => {
     });
 });
 
+//AA - COME BACK TO THIS - NOT WORKING
+//delete product by its id
 router.delete('/:id', (req, res) => {
-  // delete one product by its `id` value
+  Product.destroy({where: {id: req.params.id}})
+  .then(categoryResponse => res.status(200).json(categoryResponse))
+  .catch(err => res.status(400).json(err)) 
 });
 
 module.exports = router;
