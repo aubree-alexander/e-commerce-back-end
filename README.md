@@ -10,7 +10,7 @@
 * Functionality: This is a mock-back end for an e-commerce site. User should add their MySQL username and password to the .env file and will be able to connect to a database using Sequelize. User can start server using "npm start", and then use the Get, Post, Put, and Delete routes in Insomnia to show/create/edit/delete the different categories, products and tags on the site.
 
 ## Walkthrough/Demonstration Video
-
+https://user-images.githubusercontent.com/99295420/170602848-837852cf-44b0-45e5-8b32-393e94ebdb63.mp4
 
 
 ## User Story 
